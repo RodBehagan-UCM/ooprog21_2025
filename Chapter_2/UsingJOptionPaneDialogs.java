@@ -19,7 +19,7 @@ public class UsingJOptionPaneDialogs {
 
         } while (confirm != JOptionPane.YES_OPTION);
 
-        JOptionPane.showMessageDialog(null, "Your name is: " + name)
+        JOptionPane.showMessageDialog(null, "Your name is: " + name);
         System.exit(0);
     }
 }
