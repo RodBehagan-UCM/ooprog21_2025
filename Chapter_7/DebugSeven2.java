@@ -4,47 +4,40 @@
 import java.util.*;
 public class DebugSeven2
 {
-   public static void main(String[] args)
-   {
-      String str;
-      int x;
-      int length;
-      int start = 0;
-      int num;
-      int lastSpace = -1;
-      int sum = 0;
-      String partStr;
-      Scanner in = new Scanner(System.in);
-      System.out.print("Enter a series of integers separated by spaces >> ");
-      str = in.nextLine();
+    public static void main(String[] args)
+    {
+        String str;
+        int x;
+        int length;
+        int num;
+        int lastSpace = -1;
+        int sum = 0;
+        String partStr;
 
-      // fixed str.len() to str.length()
-      length = str.length();
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a series of integers separated by spaces >> ");
+        str = in.nextLine();
 
-      // fixed str.length to str.length()
-      for(x = 0; x < length; ++x)
-      {
-         if(str.charAt(x) == ' ')
-         {
-             partStr = str.substring(lastSpace + 1, x);     
-             num = Integer.parseInt(partStr);
-             System.out.println("                " + num);
-             sum += num;
-             lastSpace = x;
-         } 
-      }
+        length = str.length();   
 
-      // used correct variable names
-      partStr = str.substring(lastSpace + 1, length);
+        for(x = 0; x < length; ++x)  
+        {
+            if(str.charAt(x) == ' ')
+            {
+                partStr = str.substring(lastSpace + 1, x);
+                num = Integer.parseInt(partStr);
+                System.out.println(" " + num);
+                sum += num;
+                lastSpace = x;
+            }
+        }
 
-      // fixed parStr to partStr
-      num = Integer.parseInt(partStr);
+        partStr = str.substring(lastSpace + 1, length);
+        num = Integer.parseInt(partStr);
+        System.out.println(" " + num);
+        sum += num;   
 
-      System.out.println("                " + num);
-
-      sum += num; //fixed = to +=
-
-      System.out.println("         -------------------" +
-         "\nThe sum of the integers is " + sum);
-   }
+        System.out.println("-------------------" +
+            "\nThe sum of the integers is " + sum);
+    }
 }
